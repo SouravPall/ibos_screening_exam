@@ -12,6 +12,8 @@ class EmployeeProfilePage extends StatefulWidget {
 }
 
 class _EmployeeProfilePageState extends State<EmployeeProfilePage> {
+ final items = ['item 1', 'item 2', 'item 3', 'item 4'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +43,7 @@ class _EmployeeProfilePageState extends State<EmployeeProfilePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            //1st section
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -265,6 +268,7 @@ class _EmployeeProfilePageState extends State<EmployeeProfilePage> {
                 ),
               ),
             ),
+            //2nd section
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -471,6 +475,62 @@ class _EmployeeProfilePageState extends State<EmployeeProfilePage> {
                 ),
               ),
             ),
+            //3rd section
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 16.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Please input your information',
+                  style: TextStyle(
+                    fontSize: 28,
+                  ),
+                ),
+              ),
+            ),
+            Center(
+              child: Card(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade300,
+                          spreadRadius: 1,
+                          blurRadius: 3
+                      ),
+                    ],
+                  ),
+                  width: 379,
+                  height: 372,
+                  child: Column(
+                    children: [
+                      Text('Leave Type'),
+                    ],
+                  ),
+                ),
+            ),
+            ),
+            TextButton(
+              style: TextButton.styleFrom(
+                maximumSize: const Size(88.0, 40.0),
+                backgroundColor: Colors.green,
+                shape: const StadiumBorder(),
+              ),
+              onPressed: () {
+                if (kDebugMode) {
+                  print('Pressed');
+                }
+              },
+              child: const Text('Apply',style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+                textAlign: TextAlign.center,
+              ),
+            )
+
           ],
         ),
       ),
